@@ -4,7 +4,7 @@
             周末去哪儿
         </div>
         <ul class="bgcolor">
-            <li class="item border-bottom" v-for='item in recommentList' :key="item.id">
+            <li class="item border-bottom" v-for='item in list' :key="item.id">
                 <div class="item-img-wrapper">
                      <img :src='item.imgUrl' class="item-img"/>
                 </div>
@@ -19,31 +19,11 @@
 <script>
 export default {
   name: "homeWeekend",
+  props:{
+    list:Array
+  },
   data() {
     return {
-      recommentList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg",
-          title: "北京清凉避暑胜地",
-          desc: "到大自然中享受“天然空调”的清凉"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg",
-          title: "北京清凉避暑胜地",
-          desc: "到大自然中享受“天然空调”的清凉"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/source/1505/53/02091f1ee43d0a.jpg_r_640x214_2e3256b1.jpg",
-          title: "北京清凉避暑胜地",
-          desc: "到大自然中享受“天然空调”的清凉"
-        }
-      ]
     };
   }
 };
@@ -57,7 +37,6 @@ export default {
   line-height: 0.8rem;
   background-color: #eee;
   text-indent: 0.2rem;
-  margin-top: 0.2rem;
 }
 .item {
     padding-bottom: 0.1rem;

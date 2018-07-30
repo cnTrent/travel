@@ -4,7 +4,7 @@
             热销推荐
         </div>
         <ul>
-            <li class="item border-bottom" v-for='item in recommentList' :key="item.id">
+            <li class="item border-bottom" v-for='item in list' :key="item.id">
                     <img :src='item.imgUrl' class="item-img"/>
                 <div class="item-info">
                     <p class="item-title">{{item.title}}</p>
@@ -18,31 +18,12 @@
 <script>
 export default {
   name: "homeRecommend",
+  props:{
+    list:Array
+  },
   data() {
     return {
-      recommentList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1602/67/67feeab24cfc82bb90.water.jpg_200x200_af2a01b1.jpg",
-          title: "太平洋海底世界",
-          desc: "海底隧道是太平洋海底世界的主体部分"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1602/67/67feeab24cfc82bb90.water.jpg_200x200_af2a01b1.jpg",
-          title: "太平洋海底世界",
-          desc: "海底隧道是太平洋海底世界的主体部分"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1602/67/67feeab24cfc82bb90.water.jpg_200x200_af2a01b1.jpg",
-          title: "太平洋海底世界",
-          desc: "海底隧道是太平洋海底世界的主体部分"
-        },
-      ]
+     
     };
   }
 };

@@ -8,7 +8,7 @@
             输入城市/景点/游玩主题
         </div>
        <div class="header-right">
-           城市
+           北京
            <span class="iconfont arrow-icon">&#xe64a;</span>
         </div>
     </div>
@@ -16,46 +16,50 @@
 
 <script>
 export default {
-    name:"homeHeader"
-}
+  name: "homeHeader",
+  data() {
+    return {
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/styles/varibles.scss';
+@import "../../../assets/styles/varibles.scss";
 
-.header{
-    display: flex;
-    line-height: .86rem;
-    background-color: $bgColor;
-    color: #fff;
-    .header-left{
-        width: .64rem;
-        float: left;
-        .back-icon{
-            display: block;
-            text-align: center;
-            font-size: .4rem;
-        }
+.header {
+  display: flex;
+  line-height: 0.86rem;
+  background-color: $bgColor;
+  color: #fff;
+  .header-left {
+    width: 0.64rem;
+    float: left;
+    .back-icon {
+      display: block;
+      text-align: center;
+      font-size: 0.4rem;
     }
-    .header-input{
-        flex: 1;
-        margin-top: .12rem;
-        height: .64rem;
-        margin-left: .2rem;
-        padding-left: .2rem;
-        background: #fff;
-        border-radius: .1rem;
-        color: #ccc;
-        line-height: .64rem
+  }
+  .header-input {
+    flex: 1;
+    margin-top: 0.12rem;
+    height: 0.64rem;
+    margin-left: 0.2rem;
+    padding-left: 0.2rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    color: #ccc;
+    line-height: 0.64rem;
+  }
+  .header-right {
+    width: 1.24rem;
+    float: right;
+    text-align: center;
+    .arrow-icon {
+      font-size: 0.24rem;
     }
-    .header-right{
-        width: 1.24rem;
-        float: right;
-        text-align: center;
-        .arrow-icon{
-            font-size: .24rem;
-        }
-    }
+  }
 }
 </style>
 
