@@ -91,6 +91,7 @@ export default {
     padding-bottom: 50%;
 }
 .icons {
+    margin-top: .2rem;
   .icon {
     position: relative;
     overflow: hidden;
