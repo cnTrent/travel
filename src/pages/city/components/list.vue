@@ -14,100 +14,22 @@
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
+                    <div class="button-wrapper"
+                         v-for="item in hot" 
+                         :key="item.id">
                         <div class="button">
-                            北京
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">
-                            北京
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">
-                            北京
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">
-                            北京
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">
-                            北京
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">
-                            北京
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">
-                            北京
+                            {{item.name}}
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="title border-topbottom">A </div>
+            <div class="area" v-for="(item,key) in cityes" :key='item.id'>
+                <div class="title border-topbottom">{{key}} </div>
                 <div class="item-list">
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A </div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="title border-topbottom">A </div>
-                <div class="item-list">
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
-                    </div>
-                    <div class="item border-bottom">
-                        阿尔卑斯
+                    <div class="item border-bottom"
+                        v-for="innerItem in item" 
+                        :key='innerItem.id'>
+                        {{innerItem.name}}
                     </div>
                 </div>
             </div>
@@ -119,6 +41,10 @@ import BScroll from 'better-scroll'
 // const wrapper = document.querySelector('.wrapper')
 // const scroll = new BScroll(wrapper)
 export default {
+    props:{
+        hot:Array,
+        cityes:Object,
+    },
   name: "CityList",
   //页面挂载DOM即‘el’之后执行,ref帮助获取DOM，接收是this.$refs.wrapper
   mounted(){
