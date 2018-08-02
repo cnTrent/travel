@@ -6,7 +6,7 @@
                 <div class="button-list">
                     <div class="button-wrapper">
                         <div class="button">
-                            北京
+                            {{this.$store.state.city}}
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,9 @@
                 <div class="button-list">
                     <div class="button-wrapper"
                          v-for="item in hot" 
-                         :key="item.id">
+                         :key="item.id"
+                         @click="handleCityClick(item.name)"
+                    >
                         <div class="button">
                             {{item.name}}
                         </div>
@@ -33,7 +35,9 @@
                 <div class="item-list">
                     <div class="item border-bottom"
                         v-for="innerItem in item" 
-                        :key='innerItem.id'>
+                        :key='innerItem.id'
+                         @click="handleCityClick(innerItem.name)"
+                    >
                         {{innerItem.name}}
                     </div>
                 </div>
@@ -52,6 +56,13 @@ export default {
         letter:String,
     },
   name: "CityList",
+  methods:{
+      handleCityClick(city){
+          this.$store.dispatch('changeCity',city)
+            //路由做页面的跳转
+          this.$router.push('/')
+      }
+  },
   //页面挂载DOM即‘el’之后执行,ref帮助获取DOM，接收是this.$refs.wrapper
   mounted(){
       this.scroll = new BScroll(this.$refs.wrapper)

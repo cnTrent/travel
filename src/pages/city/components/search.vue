@@ -13,6 +13,7 @@
                 <li class="search-item border-botton"
                      v-for="item in list" 
                      :key='item.id'
+                      @click="handleCityClick(item.name)"
                 >
                     {{item.name}}
                 </li>
@@ -69,7 +70,14 @@ export default {
       hasNoData(){
           return !this.list.length
       }
-  }
+  },
+   methods:{
+      handleCityClick(city){
+          this.$store.dispatch('changeCity',city)
+          //路由做页面的跳转
+          this.$router.push('/')
+      }
+  },
 };
 </script>
 <style lang="scss" scoped>
